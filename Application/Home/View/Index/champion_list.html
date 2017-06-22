@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>champion_list</title>
+</head>
+<body>
+        <volist name="championData" id="data">
+              <div class="champion_container" style="width: 200px;float: left">
+                  <!--<a href="lolchart?id={$data.id}">太复杂暂时不用-->
+                  <a href="lolchart?id={$data.ename}">
+                      <img style="width: 80px;height: 80px" src="__PUBLIC__\champions\{$data.pic}" alt="{$data.ename}">
+                      <p style="margin: 0">{$data.title} {$data.cname}</p>
+                  </a>
+              </div>
+        </volist>
+
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/champion.css">
+        <script src="__PUBLIC__/js/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+
+        </script>
+</body>
+</html>

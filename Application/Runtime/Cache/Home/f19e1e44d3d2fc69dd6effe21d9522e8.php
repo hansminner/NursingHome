@@ -1,0 +1,123 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h5</title>
+</head>
+<body>
+    <div draggable="true" id="droptarget">
+        可拖动
+    </div>
+    <div draggable="false" id="droptarget">
+        不可拖动
+    </div>
+<!--媒体元素-->
+    <!-- 嵌入视频 -->
+    <video src="conference.mpg" id="myVideo" autoplay>
+        <source src="conference.webm" type="video/webm; codecs='vp8, vorbis'">
+        <source src="conference.ogv" type="video/ogg; codecs='theora, vorbis'">
+        <source src="conference.mpg">
+        Video player not available.
+    </video>
+    <!-- 嵌入音频 -->
+    <audio src="song.mp3" id="myAudio">
+        <source src="song.ogg" type="audio/ogg">
+        <source src="song.mp3" type="audio/mpeg">
+        Audio player not available.
+    </audio>
+
+
+    <div class="mediaplayer">
+        <div class="video">
+            <video id="player" src="movie.mov" poster="mymovie.jpg"
+                   width="300" height="200">
+                Video player not available.
+            </video>
+        </div>
+        <div class="controls">
+            <input type="button" value="Play" id="video-btn">
+            <span id="curtime">0</span>/<span id="duration">0</span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var handler=function(){
+            alert("");
+        };
+        var EventUtil = {
+            addHandler: function(element,type,handler){
+                if(element.addEventListener){
+                    element.addEventListener(type,handler,false);
+                }
+                else if(element.attachEvent){
+                    element.attachEvent("on"+type,handler);
+                }
+                else{
+                    element["on"+type] = handler;
+                }
+            },
+            removeHandler: function(element,type,handler){
+                if(element.removeEventListener){
+                    element.removeEventListener(type,handler,false);
+                }
+                else if(element.detachEvent){
+                    element.detachEvent("on"+type,handler);
+                }
+                else{
+                    element["on"+type] = null;
+                }
+            }
+        }
+
+
+        EventUtil.addHandler(droptarget,"",handler);
+        var droptarget = document.getElementById("droptarget");
+        EventUtil.addHandler(droptarget, "dragover", function(event){
+            EventUtil.preventDefault(event);
+        });
+        EventUtil.addHandler(droptarget, "dragenter", function(event){
+            EventUtil.preventDefault(event);
+        });
+        /* 自定义媒体播放器*/
+        //取得元素的引用
+        var player = document.getElementById("player"),
+                btn = document.getElementById("video-btn"),
+                curtime = document.getElementById("curtime"),
+                duration = document.getElementById("duration");
+        //更新播放时间
+        duration.innerHTML = player.duration;
+        //为按钮添加事件处理程序
+        EventUtil.addHandler(btn, "click", function(event){
+            if (player.paused){
+                player.play();
+                btn.value = "Pause";
+            } else {
+                player.pause();
+                btn.value = "Play";
+            }
+        });
+        //定时更新当前时间
+        setInterval(function(){
+            curtime.innerHTML = player.currentTime;
+        }, 250);
+
+
+    </script>
+</body>
+</html>

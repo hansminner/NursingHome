@@ -1,0 +1,14 @@
+.champion_container{
+
+  a{
+    text-decoration: none;
+    img{
+      text-align:center;
+    }
+  }
+  &:hover{
+    background-color: cyan;
+  }
+}
+
+
