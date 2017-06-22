@@ -41,14 +41,7 @@ class IndexController extends Controller {
         $this->display();
     }
 
-    public function lolchart() {
-        $id = I('get.id');
-        $model = new ChampionModel();
-        $championInfo=$model->getchampionInfo($id);
-        dump($championInfo['0']);
-        $this->assign('info',$championInfo['0']);
-        $this->display();
-    }
+
 
     public function champion_list() {
         $model = new ChampionModel();
@@ -57,8 +50,26 @@ class IndexController extends Controller {
         $this->display();
     }
 
+    public function lol_chart($id) {
+        //$id = I('get.id');
+        /*$model = new ChampionModel();
+        $championInfo = $model->getchampionInfo($id);
+        dump($championInfo['0']);*/
+        $this->assign('id',$id);
+        //$this->assign('info', $championInfo['0']);
+        $this->display();
+    }
+
+    public function championInfo() {
+        $id = I('get.id');
+        $model = new ChampionModel();
+        $championInfo = $model->getchampionInfo($id);
+
+        $this->ajaxReturn($championInfo['0']);
+    }
+    
     public function insertData() {
-        $daiwan = new \Org\Util\Daiwan(ConstantUtils::$TOKEN);
+        $daiwan = new \Org\Util\Daiwan("CA8DE-CCD89-4EDDD-A4B8B");
         $apiUrl = $daiwan->getMethod("Champion");
         $daiwan->curl($apiUrl);
         $championDataArr = json_decode($daiwan->curl($apiUrl), true)['data'];
@@ -72,7 +83,7 @@ class IndexController extends Controller {
         $championData = $model->getList();
         foreach ($championData as $value) {
             $championId = $value['id'];
-            $daiwan = new \Org\Util\Daiwan("3A8A7-207D4-2412D-34F54");
+            $daiwan = new \Org\Util\Daiwan("CA8DE-CCD89-4EDDD-A4B8B");
             $apiUrl = $daiwan->getMethod("GetChampionDetail", $championId);
             $championDetailArr = json_decode($daiwan->curl($apiUrl), true)['data'];
             $res = $model->insertChampInfo($championDetailArr);
