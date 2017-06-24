@@ -42,7 +42,6 @@ class IndexController extends Controller {
     }
 
 
-
     public function champion_list() {
         $model = new ChampionModel();
         $championData = $model->getList();
@@ -51,12 +50,7 @@ class IndexController extends Controller {
     }
 
     public function lol_chart($id) {
-        //$id = I('get.id');
-        /*$model = new ChampionModel();
-        $championInfo = $model->getchampionInfo($id);
-        dump($championInfo['0']);*/
-        $this->assign('id',$id);
-        //$this->assign('info', $championInfo['0']);
+        $this->assign('id', $id);
         $this->display();
     }
 
@@ -64,10 +58,9 @@ class IndexController extends Controller {
         $id = I('get.id');
         $model = new ChampionModel();
         $championInfo = $model->getchampionInfo($id);
-
         $this->ajaxReturn($championInfo['0']);
     }
-    
+
     public function insertData() {
         $daiwan = new \Org\Util\Daiwan("CA8DE-CCD89-4EDDD-A4B8B");
         $apiUrl = $daiwan->getMethod("Champion");
