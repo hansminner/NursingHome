@@ -1,8 +1,16 @@
-.champion_container{
+.content{
+  margin: 200px 50px 50px 200px;
 
+
+}
+.champion_container{
+  width: 200px;
+  float: left;
   a{
     text-decoration: none;
     img{
+      width:80px;
+      height:80px;
       text-align:center;
     }
   }

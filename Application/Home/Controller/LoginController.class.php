@@ -8,6 +8,7 @@
 
 namespace Home\Controller;
 
+<<<<<<< HEAD
 use Home\Model\UserMgrModel;
 use Think\Controller;
 class LoginController extends Controller{
@@ -25,4 +26,11 @@ class LoginController extends Controller{
         $userMgr->login($account,$pwd);
        
     }
+=======
+use Think\Controller;
+class LoginController extends Controller{
+    public function index() {
+        $this->display();
+    }
+>>>>>>> 9f8cc18014220955071ac1b346284b5691c885ab
 }

@@ -1,1 +1,1 @@
-.champion_container a{text-decoration:none}.champion_container a img{text-align:center}.champion_container:hover{background-color:cyan}
+.content{margin:200px 50px 50px 200px}.champion_container{width:200px;float:left}.champion_container a{text-decoration:none}.champion_container a img{width:80px;height:80px;text-align:center}.champion_container:hover{background-color:cyan}

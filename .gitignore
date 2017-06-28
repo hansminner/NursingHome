@@ -11,4 +11,8 @@ ThinkPHP/Library/Think/Verify/bgs/2.jpg
 ThinkPHP/Library/Think/Verify/bgs/1.jpg
 *.log
 *.log
+<<<<<<< HEAD
 
+=======
+*.log
+>>>>>>> 9f8cc18014220955071ac1b346284b5691c885ab
