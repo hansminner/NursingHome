@@ -1,13 +1,8 @@
-.jpg;.png
 *.jpg
 *.png
-*.jpg
-*.jpg
 ThinkPHP/logo.png
 ThinkPHP/Library/Think/Verify/bgs/8.jpg
 ThinkPHP/Library/Think/Verify/bgs/7.jpg
-ThinkPHP/logo.png
-ThinkPHP/logo.png
 ThinkPHP/Library/Think/Verify/bgs/6.jpg
 ThinkPHP/Library/Think/Verify/bgs/5.jpg
 ThinkPHP/Library/Think/Verify/bgs/4.jpg
@@ -16,3 +11,4 @@ ThinkPHP/Library/Think/Verify/bgs/2.jpg
 ThinkPHP/Library/Think/Verify/bgs/1.jpg
 *.log
 *.log
+
