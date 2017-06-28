@@ -5,23 +5,13 @@ use Think\Controller;
 use Home\Model\ChampionModel;
 use Utils\ConstantUtils;
 
+
+//class IndexController extends ChampionBaseController {
 class IndexController extends Controller {
     //public static $championDetailArr=json_decode($daiwan->curl($apiUrl),true)['data'];
     //$_SESSION['']= $mybasket;
     public function index() {
-        $number = 'hgghg';
-        //$number= date('y-m-d,h-m-s',time());
 
-        $title = I('get.title', $number);
-
-        dump(I('get.title'));
-        dump($title);
-        //dump($number);
-        dump(isset($number));
-        dump(empty($number));
-        $Test = M('Test');
-        $list = $Test->select();
-        $this->assign('list', $list);
         $this->display();
     }
 
@@ -62,7 +52,7 @@ class IndexController extends Controller {
     }
 
     public function insertData() {
-        $daiwan = new \Org\Util\Daiwan("CA8DE-CCD89-4EDDD-A4B8B");
+        $daiwan = new \Org\Util\Daiwan("94D41-E6999-14294-4C624");
         $apiUrl = $daiwan->getMethod("Champion");
         $daiwan->curl($apiUrl);
         $championDataArr = json_decode($daiwan->curl($apiUrl), true)['data'];
@@ -76,12 +66,16 @@ class IndexController extends Controller {
         $championData = $model->getList();
         foreach ($championData as $value) {
             $championId = $value['id'];
-            $daiwan = new \Org\Util\Daiwan("CA8DE-CCD89-4EDDD-A4B8B");
+            $daiwan = new \Org\Util\Daiwan("94D41-E6999-14294-4C624");
             $apiUrl = $daiwan->getMethod("GetChampionDetail", $championId);
             $championDetailArr = json_decode($daiwan->curl($apiUrl), true)['data'];
             $res = $model->insertChampInfo($championDetailArr);
         }
         dump($res['msg']);
+    }
+
+    public function topbar() {
+        $this->display();
     }
 
 
