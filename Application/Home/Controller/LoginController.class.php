@@ -8,11 +8,16 @@
 
 namespace Home\Controller;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 0e4283bd568626e7f5eedd8d711240957744a98d
 use Home\Model\UserMgrModel;
 use Think\Controller;
 class LoginController extends Controller {
     public function index() {
+<<<<<<< HEAD
         /*
          * todo
          * 这个页面应该单独出来*/
@@ -45,4 +50,26 @@ class LoginController extends Controller {
         }
     }
 
+=======
+        
+        $this->display();
+    }
+/*
+ *    login
+ **/
+    public function login() {
+        $account=I('post.account');
+        $pwd=I('post.password');
+        $userMgr = new UserMgrModel();
+        $userMgr->login($account,$pwd);
+       
+    }
+=======
+use Think\Controller;
+class LoginController extends Controller{
+    public function index() {
+        $this->display();
+    }
+>>>>>>> 9f8cc18014220955071ac1b346284b5691c885ab
+>>>>>>> 0e4283bd568626e7f5eedd8d711240957744a98d
 }
