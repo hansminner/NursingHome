@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>登录/注册</title>
-    <link rel="stylesheet" href="__PUBLIC__/css/login.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.css">
-    <script src="__PUBLIC__/js/lib/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/NursingHome/Public/css/login.css">
+    <link rel="stylesheet" href="/NursingHome/Public/css/bootstrap.css">
+    <script src="/NursingHome/Public/js/lib/jquery-3.2.1.js"></script>
 </head>
 <body>
 <div class="login-container">
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="login-container-content cur" >
-        <form action="{:U('Login/login')}" role="form" method="post">
+        <form action="<?php echo U('Login/login');?>" role="form" method="post">
             <div class="form-group">
                 <input class="form-control" type="text" name="userName" aria-label="手机号或邮箱" placeholder="手机号或邮箱"
                        required>
@@ -30,7 +30,7 @@
         </form>
     </div>
     <div class="signup-container-content">
-        <form action="{:U('Home/Signup/index')}" role="form" method="post">
+        <form action="<?php echo U('Home/Signup/index');?>" role="form" method="post">
             <div class="form-group">
                 <input class="form-control" type="text" name="userName" aria-label="手机号或邮箱" placeholder="手机号或邮箱"
                        required>
@@ -47,7 +47,7 @@
         </form>
     </div>
 </div>
-<script src="__PUBLIC__/js/login.js"></script>
+<script src="/NursingHome/Public/js/login.js"></script>
 
 </body>
 </html>

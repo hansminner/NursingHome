@@ -143,7 +143,7 @@ class PHPExcel_HashTable
 	 * Get index for hash code
 	 *
 	 * @param	string	$pHashCode
-	 * @return	int	Index
+	 * @return	int	Home
 	 */
 	public function getIndexForHashCode($pHashCode = '') {
 		return array_search($pHashCode, $this->_keyMap);
