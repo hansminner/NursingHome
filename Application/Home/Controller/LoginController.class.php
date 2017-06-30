@@ -18,25 +18,30 @@ class LoginController extends Controller {
      *    login
      **/
     public function login(){
-        header("charset=utf-8");
+        header("Content-Type:text/html; charset=utf-8");
+        dump($_SESSION);
         if(IS_POST) {
             $userName = I('post.userName');
             $pwd = I('post.password');
             $userMgr = new UserMgrModel();
             $res = $userMgr->login($userName, $pwd);
-            echo $res['state'];
-
             if($res['state'] == 1) {
                 $account = array(
-                    'id' => '2',
+                    'user_name' => $userName,
                 );
                 $userState = session('account', $account);
-                $this->redirect('Index/champion_list', $userState, 5, '页面跳转中...');
+                $this->redirect('Index/champion_list', $userState, 2, '页面跳转中...');
             } else {
+                echo '帐号密码错误';
                 return $res['msg'];
             }
         }
     }
-
-
+    /*
+     * logout
+     * */
+    public function logout(){
+        session('account',null);
+        $this->ajaxReturn('您已经退出登录');
+    }
 }

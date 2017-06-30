@@ -7,10 +7,8 @@ class UserMgrModel extends DataMgrBaseModel {
      * fdddddddddddd*/
     public function login($userName, $pwd){
         $sql = "select password from user where user_name='$userName'";
-        dump($userName);dump($pwd);
         $date_pwd_arr = $this->query($sql);
         $date_pwd=$date_pwd_arr['0']['password'];
-        dump($date_pwd);
         if($pwd == $date_pwd) {
             /*$sql = "select user_name,password from user where user_name='$userName'";
             $this->query($sql);*/

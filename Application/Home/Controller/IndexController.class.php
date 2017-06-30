@@ -10,48 +10,32 @@ use Utils\ConstantUtils;
 class IndexController extends Controller {
     //public static $championDetailArr=json_decode($daiwan->curl($apiUrl),true)['data'];
     //$_SESSION['']= $mybasket;
-    public function index() {
-
+    public function index(){
         $this->display();
     }
 
-    public function boot() {
-        $this->display();
-    }
-
-    public function chart() {
-        $this->display();
-    }
-
-    public function chart01() {
-        $this->display();
-    }
-
-    public function chart02() {
-        $this->display();
-    }
-
-
-    public function champion_list() {
+    public function champion_list(){
+        dump($_SESSION);
         $model = new ChampionModel();
         $championData = $model->getList();
         $this->assign('championData', $championData);
         $this->display();
     }
 
-    public function lol_chart($id) {
+    public function lol_chart($id){
+        dump($_SESSION);
         $this->assign('id', $id);
         $this->display();
     }
 
-    public function championInfo() {
+    public function championInfo(){
         $id = I('get.id');
         $model = new ChampionModel();
         $championInfo = $model->getchampionInfo($id);
         $this->ajaxReturn($championInfo['0']);
     }
 
-    public function insertData() {
+    public function insertData(){
         $daiwan = new \Org\Util\Daiwan("94D41-E6999-14294-4C624");
         $apiUrl = $daiwan->getMethod("Champion");
         $daiwan->curl($apiUrl);
@@ -61,7 +45,7 @@ class IndexController extends Controller {
         dump($res['msg']);
     }
 
-    public function insertDetail() {
+    public function insertDetail(){
         $model = new ChampionModel();
         $championData = $model->getList();
         foreach ($championData as $value) {
@@ -74,9 +58,21 @@ class IndexController extends Controller {
         dump($res['msg']);
     }
 
-    public function topbar() {
+
+    public function boot(){
         $this->display();
     }
 
+    public function chart(){
+        $this->display();
+    }
+
+    public function chart01(){
+        $this->display();
+    }
+
+    public function chart02(){
+        $this->display();
+    }
 
 }
