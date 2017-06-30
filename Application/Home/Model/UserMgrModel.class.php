@@ -1,17 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2017/6/28
- * Time: 23:40
- */
 
 namespace Home\Model;
 
-
-use Think\Model;
-
-<<<<<<< HEAD
 class UserMgrModel extends DataMgrBaseModel {
     /*
      * fdddddddddddd*/
@@ -51,18 +41,7 @@ class UserMgrModel extends DataMgrBaseModel {
                 'msg' => '该用户名已被注册',
             );
         }
-=======
-class UserMgrModel extends Model{
-    /*
-     * fdddddddddddd*/
-    protected $tableName = 'user';
-    public function login($account,$pwd) {
-        $sql="select account,password from $this->tableName where account='$account'";
-        $this->query($sql);
-        dump($this->query($sql));
 
-
->>>>>>> 0e4283bd568626e7f5eedd8d711240957744a98d
     }
 
 }
