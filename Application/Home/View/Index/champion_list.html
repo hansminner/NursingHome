@@ -1,31 +1,35 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>champion_list</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/champion.css">
+    <script src="__PUBLIC__/js/lib/jquery-3.2.1.js"></script>
 </head>
-
-<body>
-
+<body>-->
 <!--<div><a href="{:U('Login/index')}">Login</a>/<a href="">Signup</a></div>-->
-<include file="top_bar" />
-<div class="content">
-    <!--<include file="./Application/Home/View/TopBar/index.html"/>-->
-    <volist name="championData" id="data">
-        <div class="champion_container">
-            <!--<a href="lolchart?id={$data.id}">太复杂暂时不用-->
-            <a href="lol_chart?id={$data.ename}">
-                <img src="__PUBLIC__\champions\{$data.pic}" alt="{$data.ename}">
-                <p>{$data.title} {$data.cname}</p>
-            </a>
-        </div>
-    </volist>
-</div>
+<!--<include file="top_bar" />-->
+<extend name="top_bar" />
+<block name="content">
+    <div class="content">
+        <!--<include file="./Application/Home/View/common/index.html"/>-->
+        <volist name="championData" id="data">
+            <div class="champion_container">
+                <!--<a href="lolchart?id={$data.id}">太复杂暂时不用-->
+                <a href="lol_chart?id={$data.ename}">
+                    <img src="__PUBLIC__\champions\{$data.pic}" alt="{$data.ename}">
+                    <p>{$data.title} {$data.cname}</p>
+                </a>
+            </div>
+        </volist>
+    </div>
+</block>
+<block name="extra_js">
 
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/champion.css">
-<script src="__PUBLIC__/js/lib/jquery-3.2.1.js"></script>
-<script type="text/javascript">
-
-</script>
+</block>
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/champion.css">
+</block>
+<!--
 </body>
-</html>
+</html>-->

@@ -41,7 +41,7 @@ if(function_exists('saeAutoLoader')){// 自动识别SAE环境
     defined('APP_MODE')     or define('APP_MODE',      'sae');
     defined('STORAGE_TYPE') or define('STORAGE_TYPE',  'Sae');
 }else{
-    defined('APP_MODE')     or define('APP_MODE',       'common'); // 应用模式 默认为普通模式    
+    defined('APP_MODE')     or define('APP_MODE',       'Common'); // 应用模式 默认为普通模式
     defined('STORAGE_TYPE') or define('STORAGE_TYPE',   'File'); // 存储类型 默认为File    
 }
 

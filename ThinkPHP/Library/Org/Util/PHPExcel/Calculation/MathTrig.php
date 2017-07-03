@@ -332,8 +332,8 @@ class PHPExcel_Calculation_MathTrig {
 	/**
 	 * GCD
 	 *
-	 * Returns the greatest common divisor of a series of numbers.
-	 * The greatest common divisor is the largest integer that divides both
+	 * Returns the greatest Common divisor of a series of numbers.
+	 * The greatest Common divisor is the largest integer that divides both
 	 *		number1 and number2 without a remainder.
 	 *
 	 * Excel Function:
@@ -436,8 +436,8 @@ class PHPExcel_Calculation_MathTrig {
 	/**
 	 * LCM
 	 *
-	 * Returns the lowest common multiplier of a series of numbers
-	 * The least common multiple is the smallest positive integer that is a multiple
+	 * Returns the lowest Common multiplier of a series of numbers
+	 * The least Common multiple is the smallest positive integer that is a multiple
 	 * of all integer arguments number1, number2, and so on. Use LCM to add fractions
 	 * with different denominators.
 	 *

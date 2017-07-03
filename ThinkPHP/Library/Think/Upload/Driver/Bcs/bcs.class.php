@@ -152,7 +152,7 @@ class BaiduBCS {
 	 * @return BCS_ResponseCore
 	 */
 	private function authenticate($opt) {
-		//set common param into opt
+		//set Common param into opt
 		$opt [self::AK] = $this->ak;
 		$opt [self::SK] = $this->sk;
 

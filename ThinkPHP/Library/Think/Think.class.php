@@ -60,7 +60,7 @@ class Think {
           }
 
           // 读取当前应用模式对应的配置文件
-          if('common' != APP_MODE && is_file(CONF_PATH.'config_'.APP_MODE.CONF_EXT))
+          if('Common' != APP_MODE && is_file(CONF_PATH.'config_'.APP_MODE.CONF_EXT))
               C(load_config(CONF_PATH.'config_'.APP_MODE.CONF_EXT));  
 
           // 加载模式别名定义

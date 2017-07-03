@@ -2761,7 +2761,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 
 				// ftCmo
 				if($spTypes[$i] == 0x00C9){
-					// Add ftCmo (common object data) subobject
+					// Add ftCmo (Common object data) subobject
 					$objData .=
 						pack('vvvvvVVV'
 								, 0x0015	// 0x0015 = ftCmo
@@ -2782,7 +2782,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 					$objData .= pack('H*', '00000000010001030000020008005700');
 				}
 				else {
-					// Add ftCmo (common object data) subobject
+					// Add ftCmo (Common object data) subobject
 					$objData .=
 						pack('vvvvvVVV'
 							, 0x0015	// 0x0015 = ftCmo

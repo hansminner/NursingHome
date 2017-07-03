@@ -479,7 +479,7 @@ class PHPExcel_Calculation_Statistical {
 		//	will truncate the coeficcients to 14 digits.
 
 		//	You have permission to use and distribute this function freely for
-		//	whatever purpose you want, but please show common courtesy and give credit
+		//	whatever purpose you want, but please show Common courtesy and give credit
 		//	where credit is due.
 
 		//	Input paramater is $p - probability - where 0 < p < 1.
@@ -2722,7 +2722,7 @@ class PHPExcel_Calculation_Statistical {
 	/**
 	 * POISSON
 	 *
-	 * Returns the Poisson distribution. A common application of the Poisson distribution
+	 * Returns the Poisson distribution. A Common application of the Poisson distribution
 	 * is predicting the number of events over a specific time, such as the number of
 	 * cars arriving at a toll plaza in 1 minute.
 	 *

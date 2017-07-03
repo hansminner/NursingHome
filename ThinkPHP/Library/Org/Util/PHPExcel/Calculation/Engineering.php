@@ -1909,12 +1909,12 @@ class PHPExcel_Calculation_Engineering {
 	/**
 	 * IMLOG10
 	 *
-	 * Returns the common logarithm (base 10) of a complex number in x + yi or x + yj text format.
+	 * Returns the Common logarithm (base 10) of a complex number in x + yi or x + yj text format.
 	 *
 	 * Excel Function:
 	 *		IMLOG10(complexNumber)
 	 *
-	 * @param	string		$complexNumber	The complex number for which you want the common logarithm.
+	 * @param	string		$complexNumber	The complex number for which you want the Common logarithm.
 	 * @return	string
 	 */
 	public static function IMLOG10($complexNumber) {

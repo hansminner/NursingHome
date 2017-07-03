@@ -13,7 +13,7 @@
  *                                                        *
  * HproseCommon.php                                       *
  *                                                        *
- * hprose common library for php5.                        *
+ * hprose Common library for php5.                        *
  *                                                        *
  * LastModified: Nov 15, 2013                             *
  * Author: Ma Bingyao <andot@hprfc.com>                   *
