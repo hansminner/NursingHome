@@ -1,0 +1,69 @@
+<extend name="./Common/admin_base"/>
+<block name="content">
+    <p>首页编辑</p>
+    <div class="index-row">
+        <div class="index-hotnews-ctn">
+            <caption>新闻编辑</caption>
+            <!--table bar-->
+            <div class="table_bar">
+                <a class="a_style_button" href="{:U('News/add_news')}">编写新闻</a>
+                <!--<div class="search_box_container">
+                    <div class="search_box">
+                        <form action="/0711/admin.php/Game/strategy" method="get">
+                            <input type="text" placeholder="请输入文章标题或小编昵称" name="title">
+                            <button type="submit">搜索</button>
+                        </form>
+
+                    </div>
+                </div>-->
+            </div>
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <td>题目</td>
+                    <!--<td>内容</td>-->
+                    <td style="width: 340px">概要</td>
+                    <td>关键词</td>
+                    <td>source</td>
+                    <td>cite</td>
+                    <td>类型</td>
+                    <td>是否热门</td>
+                    <td>优先级</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="news_list" id="vo">
+                    <tr>
+                        <td>{$vo.title}</td>
+                       <!-- <td>{$vo.content}</td>-->
+                        <td>{$vo.summary}</td>
+                        <td>{$vo.key_words}</td>
+                        <td>{$vo.source}</td>
+                        <td>{$vo.cite}</td>
+                        <td>{$vo.type_text}</td>
+                        <td>{$vo.is_hot}</td>
+                        <td>{$vo.priority}</td>
+                        <td>
+                            <a href="{:U('News/edit_news?id='.$vo['id'])}">编辑</a>
+                            <a href="{:U('News/edit_news?id='.$vo['id'])}">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</block>
+<block name="extra_js">
+    <script type="text/javascript">
+        $(function () {
+
+        });
+        function news_hide(id) {
+            $.post('Admin/News/edit_index_news', {id: id}, function (res) {
+                alert(res);
+            });
+        }
+    </script>
+</block>

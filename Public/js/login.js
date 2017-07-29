@@ -12,6 +12,7 @@ $(document).ready(function () {
         $(".cur").removeClass("cur");
         $('.signup-container-content').addClass("cur");
     });
+
     /*todo
      * 登录前的验证
      * */

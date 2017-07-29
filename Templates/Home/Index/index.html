@@ -1,0 +1,133 @@
+<extend name="./Common/home_base"/>
+<block name="content">
+    <div class="index-row">
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <volist name="carousel_list" id="carousel_list">
+                    <div class="item">
+                        <img src="__PUBLIC__/img/{$carousel_list.path}" alt="{$carousel_list.path} slide">
+                        <div class="carousel-caption">{$carousel_list.title}</div>
+                    </div>
+                </volist>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next">&rsaquo;</a>
+        </div>
+        <!--轮播图边的热点新闻-->
+        <div class="index-hotnews-ctn">
+            <volist name="hotnews_list" id="vo">
+                <blockquote>
+                    <a href="#"><h1 class="text-center">{$vo.title}</h1></a>
+                    <small class="pull-right">{$vo.source}<cite title="Source Title">{$vo.cite}</cite></small>
+                </blockquote>
+            </volist>
+        </div>
+    </div>
+    <div style="width:1136px;height:90px;overflow:hidden;margin:16px auto">
+    </div>
+    <div class="column-row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    column
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="index-column-trigger">
+                    <ul class="column-nav nav nav-tabs nav-stacked" id="myTab">
+                        <volist name="type_list" id="vo">
+                            <li>
+                                <a href="#{$vo.type_en}" data-toggle="tab">
+                                    <span>{$vo.type}</span>
+                                </a>
+                            </li>
+                        </volist>
+                        <li class="active">
+                            <a href="#hot" data-toggle="tab">
+                                <span>论坛最热</span>
+                            </a>
+                        </li>
+                        <!--<li class="active">
+                            <a href="#international" data-toggle="tab">
+                                <span>国际局势</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#road-belt" data-toggle="tab">
+                                <span>一带一路</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cn-us" data-toggle="tab">
+                                <span>中美关系</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#peripheral" data-toggle="tab">
+                                <span>周边关系</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cn-eu" data-toggle="tab">
+                                <span>中欧关系</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#hot" data-toggle="tab">
+                                <span>论坛最热</span>
+                            </a>
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="index-column-content tab-content">
+                    <foreach name="news_list" item="value" key="k">
+                        <div class="paper_item tab-pane" id="{$k}">
+                            <foreach name="value" item="vo">
+                                <div class="item-list">
+                                    <h5>{$vo.title}</h5>
+                                    <h5>{$vo.cite}</h5>
+                                    <div>
+                                        {$vo.summary}
+                                    </div>
+                                </div>
+                            </foreach>
+                        </div>
+                    </foreach>
+                    <div class="paper_item tab-pane" id="hot">
+                        <volist name="news_list" id="vo2">
+                            <div class="item-list">
+                                <if condition="$vo['type'] eq 1">
+                                    <h5>{$vo2.title}</h5>
+                                    <h5>{$vo2['type']}</h5>
+                                    <div>
+                                        {$vo2.summary}
+                                    </div>
+                                </if>
+                            </div>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index-bigCream" style="height:auto;"></div>
+    <div class="video-row"></div>
+</block>
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+</block>
+<block name="extra_js">
+    <script src="__PUBLIC__/js/index.js"></script>
+</block>

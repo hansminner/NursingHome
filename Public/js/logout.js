@@ -1,7 +1,7 @@
 function logout() {
-    $.post('../Login/logout', 'uid',function (data) {
+    $.post('././Login/logout', 'uid',function (data) {
         alert(data);
-        $('#login_center').load('top_bar.html');
+        $('#login_center').load('index.html #login_center');
         }
     )
 }

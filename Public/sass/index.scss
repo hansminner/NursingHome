@@ -1,0 +1,41 @@
+body {
+  margin: 50px 370px 200px 370px;
+  border: solid;
+}
+.index-row {
+  padding: 16px 10px 0px 10px;
+
+  #myCarousel {
+    overflow: hidden;
+    width: 750px;
+    height: 460px;
+    float: left;
+  }
+  .index-hotnews-ctn {
+    float: left;
+    width: 368px;
+    height: 460px;
+  }
+}
+
+.column-row {
+  .tab-content{
+    max-width: 920px;
+    margin: 2px;
+
+  }
+  .index-column-trigger {
+    width: 200px;
+    float: left;
+    position: relative;
+  }
+  .index-column-content {
+
+    float: left;
+    .item-list {
+      width: 281px;
+      margin-right: 19px;
+      float: left;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<extend name="./Common/home_base"/>
+<block name="content">
+    <div class="content">
+        <!--<include file="./Application/Home/View/common/index.html"/>-->
+        <volist name="championData" id="data">
+            <div class="champion_container">
+                <!--<a href="lolchart?id={$data.id}">太复杂暂时不用-->
+                <a href="lol_chart?id={$data.ename}">
+                    <img src="__PUBLIC__\champions\{$data.pic}" alt="{$data.ename}">
+                    <p>{$data.title} {$data.cname}</p>
+                </a>
+            </div>
+        </volist>
+    </div>
+</block>
+<block name="extra_js">
+
+</block>
+<block name="extra_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/champion.css">
+</block>

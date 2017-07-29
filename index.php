@@ -19,8 +19,12 @@ define('APP_DEBUG',true);
 
 // 定义应用目录
 define('APP_PATH','./Application/');
+//define('APP_PATH','./src/');
 
+//定义模版文件夹
+define('TMPL_PATH','./Templates/');
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
 // 亲^_^ 后面不需要任何代码了 就是如此简单
+define('BIND_MODULE', 'Home');
